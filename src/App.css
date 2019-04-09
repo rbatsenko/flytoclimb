@@ -18,18 +18,33 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-image: url('./bg.jpg');
-  background-size: cover;
-  background-position: center;
 }
 
 .App-header * {
   z-index: 15;
 }
 
-.App-header::after {
+.bg {
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  background-image: url('./bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.bg::after {
   content: "";
   position: absolute;
+  left: 0;
+  top: 0;
   z-index: 10;
   height: 100%;
   width: 100%;
